@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 느낌표 tab 자동 html -->
+    <!-- 1. div#cssid선택자 -->
+    <div id="app">
+        <!-- hello vue! -->
+    </div>
+
+    <!-- 2. script -->
+    <script>
+        var div = document.querySelector('#app');
+        var str = 'hello world';
+        div.innerHTML = str;
+        // div.innerHTML = 'hello world!!!'; 이렇게 직접 값을 넣기보단 변수를 사용!
+        str = 'hello vue!!!';
+        div.innerHTML = str;
+    </script>
+</body>
+
+</html>
