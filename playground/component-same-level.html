@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- <app-header :프롭스 속성 이름="상위컴포넌트의 데이터 이름"></app-header> -->
+    <app-header :propsdata="num"></app-header>
+    <!-- deliverNum(value)로 알아서 받아짐 -->
+    <app-content v-on:pass="deliverNum"></app-content>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var appHeader = {
+      template: '<div>header</div>',
+      props: ['propsdata']
+    }
+    var appContent = {
+      template: '<div>content<button v-on:click="passNum">pass</button></div>',
+      methods: {
+        passNum: function() {
+          this.$emit('pass', 10);
+        }
+      }
+
+    }
+    new Vue({
+      el: '#app',
+      components: {
+        'app-header': appHeader,
+        'app-content': appContent
+      },
+      data: {
+        num: 0
+      },
+      methods: {
+        deliverNum: function(value) { //10을 value로 받음
+          this.num = 10;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

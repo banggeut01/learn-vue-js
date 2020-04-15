@@ -314,19 +314,49 @@ net Vue({
 
 [this 관련 글 2](https://medium.com/quick-code/understanding-the-this-keyword-in-javascript-cb76d4c7c5e8)
 
+```javascript
+var obj = {
+    num: 10,
+    getNumber: function() {
+        console.log(this.num);
+    }
+}
+obj.getNumber() // 10
+```
+
+
+
 # 컴포넌트 통신 방법 - 응용
 
 ## 같은 컴포넌트 레벨 간의 통신 방법
 
+`Root` 인스턴스의 하위 컴포넌트 `AppHeader`, `AppContent`간의 통신
+
+![com_level](./imgs/com_level.PNG)
+
+위에서 아래는 `props`, 아래에서 위는 `emit`
+
+
+
 ## 같은 컴포넌트 레벨 간의 통신 방법 구현 1
 
+[./playground/component-same-level.html 실습코드](./playground/component-same-level.html)
+
+![same_level](./imgs/same_level.PNG)
+
 ## 같은 컴포넌트 레벨 간의 통신 방법 구현 2
+
+같은 텍스트 선택 단축키
+
+\- 윈도우 : Ctrl + d
+
+\- 맥 : Cmd + d
 
 # 라우터
 
 ## 뷰 라우터 소개와 설치
 
-# 뷰 라우터 인스턴스 연결 및 초기 상태 안내
+## 뷰 라우터 인스턴스 연결 및 초기 상태 안내
 
 ## [실습 안내] routes 속성 설명 및 실습 안내
 
