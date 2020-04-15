@@ -214,39 +214,105 @@ var vm = new Vue(options);
 
 ## 컴포넌트 소개
 
+화면의 영역을 영역별로 구분하여 코드로 관리하는 것
+
+![component](./imgs/component.PNG)
+
+**재사용성**이 핵심
+
+컴포넌트 간에 관계가 생김
+
 ## [실습 안내] 컴포넌트 등록 및 실습
 
-## [실습 풀이] 전역 컴포넌트 등록
+[./playground/component.html 실습코드](./playground/component.html)
+
+
 
 ## 지역 컴포넌트 등록
 
+아래 두 표현은 같은 의미이다.
+
+```javascript
+// 전역 컴포넌트
+Vue.component('컴포넌트 이름', 컴포넌트 내용);
+```
+
+```javascript
+net Vue({
+    el: '#app',
+    components: {
+        // 지역 컴포넌트
+        '컴포넌트 이름': 컴포넌트 내용
+    }
+});
+```
+
+
+
 ## 전역 컴포넌트와 지역 컴포넌트의 차이점
 
+지역 컴포넌트 복수형 **components**
+
+
+
+전역 컴포넌트는 플러그인, 라이브러리 처럼 전역으로 사용하는 경우에만 사용
+
+일반적으로 지역 컴포넌트 사용
+
 ## 컴포넌트와 인스턴스와의 관계
+
+인스턴스 생성하면 `<Root>`가 생겨남
 
 # 컴포넌트 통신 방법 - 기본
 
 ## 컴포넌트 통신
 
+![com](./imgs/com_way.PNG)
+
 ## 컴포넌트 통신 규칙이 필요한 이유
+
+![comex](./imgs/comex.PNG)
+
+`AppHeader` -> `LoginForm`
+
+`LoginForm` -> `AppFooter`
+
+`AppFooter` -> `NavigationBar`
+
+통신 규칙이 없을 때 데이터가 바뀌었을 때 버그 알기 어려움
+
+
+
+통신 규칙이 적용되었을 때
+
+![comex2](./imgs/comex2.PNG)
+
+방향이 생겼을 때 데이터 추적이 가능하다.
+
+`props`와 `event`를 통해 데이터 주고받음
 
 ## props 속성
 
-## props 속성의 특징
+[./playground/props.html 실습코드](./playground/props.html)
 
-## [실습 안내] props 속성 실습
-
-## [실습 풀이] props 속성 실습 풀이
+```html
+<!-- 공백은 에러 -->
+<app-header v-bind: propsdata="message"></app-header>
+<!-- 아래처럼 쓰기-->
+<app-header v-bind:propsdata="message"></app-header>
+```
 
 ## event emit
 
-## event emit 으로 콘솔 출력하기
+[./playground/event-emit.html 실습코드](./playground/event-emit.html)
 
-## [실습 안내] event emit 실습 안내
-
-## [실습 풀이] event emit 실습 풀이
+## 
 
 ## 뷰 인스턴스에서의 this
+
+[this 관련 글 1](https://www.w3schools.com/js/js_this.asp)
+
+[this 관련 글 2](https://medium.com/quick-code/understanding-the-this-keyword-in-javascript-cb76d4c7c5e8)
 
 # 컴포넌트 통신 방법 - 응용
 
