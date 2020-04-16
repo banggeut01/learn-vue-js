@@ -759,7 +759,39 @@ html, js, css 한파일에 정의하는것 SPC
 
 ## 싱글 파일 컴포넌트에 배운 내용 적용하여 개발 시작하기
 
+[./src/App.vue 실습코드](./src/App.vue)
+
+```html
+<template>
+  <div>
+    {{ str }}
+  </div>
+</template>
+
+<script>
+export default {
+  data: function() {
+    return {
+       str: 'hi'
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
+```
+
+
+
 ## 싱글 파일 컴포넌트 체계에서 컴포넌트 등록하기
+
+[./src/components/AppHeader.vue](./src/components/AppHeader.vue)
+
+컴포넌트 파일명명 **두단어** 이상의 파스칼
+
+	- `<main><main>` 태그로 했을 때 이미있는 main 태그와 충돌될 수 있기 때문
 
 ## 싱글 파일 컴포넌트에서 props 속성 사용하는 방법
 
