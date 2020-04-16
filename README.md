@@ -629,15 +629,131 @@ watch 무거운 로직들 - 예) 데이터 요청
 
 ## 최신 Vue CLI 소개
 
+[Vue CLI 공식 사이트 링크](https://cli.vuejs.org/)
+
+Command Line Interface : 명령어 실행도구
+
+Get Started -> Installation 
+
+```bash
+$ node -v
+v12.14.1
+# 노드 버전 10 이상인지 확인!
+$ npm -v
+6.13.4
+# npm 버전 6점대 확인!
+```
+
+```bash
+# 설치
+npm install -g @vue/cli
+#+ @vue/cli@4.3.1 설치 20.04.16 기준
+```
+
+
+
 ## Vue CLI 도구 설치할 때 문제점 해결 방법
+
+```bash
+npm install -g @vue/cli
+```
+
+vue cli 설치시 permission error가 일어날 수 있다.
+
+- 설치하는 라이브러리 위치하는 폴더에 쓰기 권한이 없기 때문에 에러가 일어남
+- 해결법 : 앞에 sudo 붙여주기
+
+```bash
+sudo npm install -g @vue/cli
+```
+
+[Where does npm install packages? 스택 오버 플로우 글](https://stackoverflow.com/questions/5926672/where-does-npm-install-packages)
+
+맥 기준 `/user/local/lib/node_modules`
+
+윈도우 기준 위 링크 참고
 
 ## CLI 2.x와 3.x의 차이점 / 프로젝트 생성 및 서버 실행
 
+```bash
+[Vue CLI 2.x]
+vue init '프로젝트 템플릿 유형' '프로젝트 폴더 위치'
+vue init webpack-simple '프로젝트 폴더 위치'
+
+[Vue CLI 3.x]
+vue create '프로젝트 위치'
+vue create vue-cli
+# default에서 엔터!
+```
+
+```bash
+$ cd vue-cli
+$ npm run serve
+```
+
+[웹 개발할 때 알아두면 좋은 리눅스 명령어 글](https://joshua1988.github.io/web-development/linux-commands-for-beginners/)
+
+VSCode 에서 터미널 창 : 컨트롤 `~`
+
 ## CLI로 생성한 프로젝트 폴더 구조 확인 및 main.js 파일 설명
+
+* `node_modules`
+
+* `public`
+
+  * `index.html`
+
+    ```html
+    <!-- built files will be auto injected -->
+    ```
+
+    
+
+* `src`
+
+  * `main.js`
+    * `render`의 역할 : `App` 컴포넌트 불러옴
+  * `App.vue`
+
+* `package.json` : 라이브러리 설명
+
+  * `script > serve` 에 관한 명령어 단축
+  * 
 
 ## 싱글 파일 컴포넌트 소개 및 여태까지 배운 내용 적용하는 방법
 
+vue 파일 생성 후 `vue`입력 엔터 -> 자동완성
+
+```html
+<template>
+  <!-- html -->
+</template>
+
+<script>
+export default {
+// JavaScript
+}
+</script>
+
+<style>
+/* css */
+</style>
+```
+
+html, js, css 한파일에 정의하는것 SPC
+
+[a.vue 실습 코드](./src/a.vue)
+
 ## App.vue와 HelloWorld.vue 설명
+
+```html
+<!-- 컴포넌트 명명법 -->
+<hellow-world></hellow-world>
+<HelloWorld></HelloWorld>
+<HelloWorld/>
+```
+
+
 
 # 싱글 파일 컴포넌트
 
