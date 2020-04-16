@@ -581,23 +581,49 @@ axios 요청 결과
 
 ## 템플릿 문법 소개
 
+데이터 바인딩 
+
+- `{{ }}` : 콧수염 괄호
+
+디렉티브 
+
+- `v-`라고 붙는 속성들
+
 ## 텍스트 바인딩과 computed 속성
+
+[./playground/data-binding.html 실습코드](./playground/data-binding.html)
 
 ## [실습 안내] 뷰 디렉티브와 v-bind
 
 ## [실습 풀이] 클래스 바인딩, v-if, v-show
 
+`v-show`는 Dom에 남아있음 `display:none`
+
 ## 모르는 문법이 나왔을 때 공식 문서를 보고 해결하는 방법
 
+[Form Input Binding 공식 문서](https://vuejs.org/v2/guide/forms.html#ad)
+
 ## methods 속성과 v-on 디렉티브를 이용한 키보드, 마우스 이벤트 처리 방법
+
+[./playground/methods.html 실습코드](./playground/methods.html)
 
 # 템플릿 문법 - 실전
 
 ## watch 속성
 
+[./playground/watch.html 실습코드](./playground/watch.html)
+
 ## watch 속성 vs computed 속성
 
+watch 무거운 로직들 - 예) 데이터 요청
+
+웬만하면 computed를 쓰기
+
+[watch 속성과 computed 속성 차이점에 관한 공식 문서 링크](https://vuejs.org/v2/guide/computed.html#ad)
+
 ## computed 속성을 이용한 클래스 코드 작성 방법
+
+[./playground/computed-usage.html 실습코드](./playground/computed-usage.html)
 
 # 프로젝트 생성 도구 - Vue CLI
 
