@@ -481,13 +481,101 @@ var router = new VueRouter({
 
 ## HTTP 라이브러리와 Ajax 그리고 Vue Resource
 
+axios : 뷰에서 권고하는 HTTP 라이브러리
+
+Ajax : 비동기적인 웹 애플리케이션 제작을 위한 웹 개발 기법
+
+- jQeury.ajaz()
+
+vue-resource : `pagekit`단체의 라이브러리로 vue.js에서 활용할 수 있는 라이브러리였는데 더 이상 공식 라이브러리로 관리안함. 지금은 쓰이지 않음.
+
 ## axios 소개 및 오픈 소스를 사용하기 전에 알아야 할 것들
+
+Axios(액시오스) : Vue.js에서 가장 많이 쓰이는 라이브러리로 Promise 기반의 통신 라이브러리
+
+오픈소스 사용할 때
+
+	- github의 Star 수를 확인하고 사용하기
+	- commits, contributors 수 확인하기
+	- 최근 언제 수정이 되었는지 커밋이력보기
+
+promise : js의 비동기처리 패턴
+
+자바스크립트의 비동기 처리 패턴
+
+	1. callback
+ 	2. promise
+ 	3. promise + generator
+ 	4. async & await
+
+[Axios 깃헙 주소](https://github.com/axios/axios)
+
+[자바스크립트 비동기 처리와 콜백 함수](https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/)
+
+[자바스크립트 Promise 이해하기](https://joshua1988.github.io/web-development/javascript/promise-for-beginners/)
+
+[자바스크립트 async와 await](https://joshua1988.github.io/web-development/javascript/js-async-await/)
 
 ## axios 실습 및 this 설명
 
+[./playground/axios.html 실습코드](./playground/axios.html)
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+```
+
+axios 요청 결과
+
+	- `data`
+	- `config`
+	- `headers`
+	- `request`
+
+[jsonplaceholder 사이트 링크](https://jsonplaceholder.typicode.com/)
+
+	- jsonplaceholder : REST API
+	- 테스트 샘플
+
+[자바스크립트 동작 원리](https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/)
+
 ## 웹 서비스에서의 클라이언트와 서버와의 HTTP 통신 구조
 
+브라우저에서 HTTP 요청 수신(GET, url)
+
+서버는 HTTP 응답으로 user 정보 10개 보냄
+
+
+
+![bs](./imgs/browser_server.PNG)
+
+
+
+어떤식으로 HTTP 요청이 이루어지는가?
+
+![bs](./imgs/browser_server2.PNG)
+
+백엔드 구조, 동작까지 알아야 서비스 보는 시야가 넓어짐
+
+=> 클라이언트에서 성능 최적화, 페이지 빨리 띄우기 위한 전반적 지식들을 알 수 있음, 백엔드측이랑 편하게 의사소통 가능함
+
 ## 크롬 개발자 도구 네트워크 패널 보는 방법
+
+클라이언트에서 서버측으로 `axios`를 통해 HTTP 요청
+
+개발자도구 `network` 패널보기
+
+- XHR이라는 데이터 통신 알 수 있음
+- 어떤 요청이 갔고, 어떤 응답이 왔는지 알 수 있음
+- 프론트 개발시 가장 많이 보게 될 것
+- `Headers`: HTTP Header 의미. 특정 요청, 응답에 대한 정보를 담음
+  - `General` : Request URL, Status Code(서버에서 정상적으로 데이터 받았는지?)
+  - `Response Headers `: caching
+- `Response` : GET 요청시 response 보여짐
+
+[프런트엔드 개발자가 알아야 하는 HTTP 프로토콜](https://joshua1988.github.io/web-development/http-part1/)
+
+[구글 크롬 개발자 도구 공식 문서](https://developers.google.com/web/tools/chrome-devtools/)
 
 # 템플릿 문법 - 기본
 
