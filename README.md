@@ -803,10 +803,51 @@ export default {
 
 ## 프로젝트 생성 및 마크업 작업
 
+[./playground/vue-form/src/App.vue](./playground/vue-form/src/App.vue)
+
 ## v-model 속성과 submit 이벤트 처리
 
+[이벤트 버블링과 캡쳐링 블로그 글](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
+
+```js
+//event.preventDefault() // 새로고침 막음
+// 아래와 같이
+<form v-on:submit.prevent="submitForm">
+```
+
 ## axios를 이용한 데이터 전송 및 form 구현
+
+```bash
+$ npm install axios
+```
+
+
 
 # 마무리
 
 ## 수업 정리 및 향후 학습 방향 안내
+
+- Reactivity
+- 인스턴스
+- 컴포넌트
+- 컴포넌트 통신
+  - props
+  - event emit
+- HTTP 통신 라이브러리 (axios)
+- 템플릿 문법
+  - 데이터 바인딩
+  - 뷰 디렉티브
+- Vue CLI
+- 싱글 파일 컴포넌트 
+
+\- [Vue.js 공식 문서](https://vuejs.org/v2/guide/)
+
+\- [Vue.js 스타일 가이드](https://vuejs.org/v2/style-guide/)
+
+\- [Vue.js Cookbook](https://vuejs.org/v2/cookbook/)
+
+\- [Vuex 공식 문서](https://vuex.vuejs.org/)
+
+\- [VueRouter 공식 문서](https://router.vuejs.org/)
+
+\- [Vue CLI 공식 문서](https://cli.vuejs.org/)
