@@ -356,15 +356,126 @@ obj.getNumber() // 10
 
 ## 뷰 라우터 소개와 설치
 
+뷰 라우터 는 뷰 라이브러리를 이용해 SPA 구현하는 라이브러리
+
+[./playground/vue-router.html 실습코드](./playground/vue-router.html)
+
+```html
+<!-- 기본 구조-->
+<div id="app"></div>
+<!-- 순서 중요하다 vue.js => router.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+    // 라우터 인스턴스
+    new VueRouter({
+      
+    })
+    // 뷰 인스턴스
+    new Vue({
+      el: '#app'
+    })
+</script>
+```
+
+
+
 ## 뷰 라우터 인스턴스 연결 및 초기 상태 안내
+
+개발자 도구에서 `router` 연결 되었는지 확인!
 
 ## [실습 안내] routes 속성 설명 및 실습 안내
 
+`routes` - 페이지의 라우팅 정보(어떤 url로 들어갔을때 어떤 화면을 뿌려줄지 배열로), `path, component` 객체를 리스트 형태로 가짐
+
+```js
+var LoginComponent = {
+    template: '<div>login</div>'
+}
+var router = new VueRouter({
+    //페이지의 라우팅 정보
+    routes: [
+        {
+            // 페이지의 url 
+            path: '/login',
+            // key-value 형태
+            // 해당 url에서 표시될 컴포넌트
+            component: LoginComponent
+        },
+        {
+        }
+    ]
+})
+```
+
+
+
 ## 라우터가 표시되는 영역 및 router-view 태그 설명
+
+`<router-view></router-view>`
 
 ## 링크를 이용한 페이지 이동 및 router-link 태그 설명
 
+`<router-link>` 태그는 `<a>`태그로 나타나짐
+
+```html
+<!-- <a href="">Login</a> -->
+<router-link to="/login">Login</router-link>
+```
+
+라우터에서 페이지 이동을 위한 링크 태그
+
+컴포넌트 정확한 이름이 안뜨지만 싱글 파일 컴포넌트에서 이름까지 부여했을 때 의미있는 컴포넌트가 될 수 있음 routes의 `name`
+
 ## 라우터 정리 및 학습 방향 안내
+
+뷰 라우터 : 페이지 이동과 관련된 기능을 구현할 때 사용하는 라이브러리
+
+설치 방법 
+
+ 1. CDN
+
+ 2. NPM 방식 
+
+    ```bash
+    npm install vue-router
+    ```
+
+	3. 라우터 등록
+
+    ```js
+    // 라우터 인스턴스 생성
+    var router = new VueRouter({
+        // 라우터 옵션
+    })
+    // 인스턴스에 라우터 인스턴스 등록
+    new Vue({
+        router: router
+    })
+    ```
+
+	4. 뷰 라우터 옵션
+
+    - `routes` : 페이지 url(`path`), `component`(단수임에 유의!)
+
+      - Vue 인스턴스에는 `components` (복수)
+
+    - `mode` : 해시(#)없앨때 `history` 넣으면 된다.
+
+      ```js
+      mode: 'history'
+      ```
+
+	5. router-view
+
+    * 컴포넌트가 뿌려지는 영역
+
+	6. router-link
+
+    * 페이지 이동을 할 때 키보드, 마우스 입력으로 이동함
+    * `to` 속성으로 이동할 URL 지정
+
+[네비게이션 가드 블로그 글 안내](https://joshua1988.github.io/web-development/vuejs/vue-router-navigation-guards/)
 
 # HTTP 통신 라이브러리 - axios
 
